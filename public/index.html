@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пойдём на свидание?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="page">
+    <section class="calm-intro card" id="calmIntro">
+      <div class="calm-stars" aria-hidden="true">
+        <span>✦</span><span>♡</span><span>☁</span><span>✧</span>
+      </div>
+
+      <div class="moon-scene" aria-hidden="true">
+        <div class="moon"></div>
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+      </div>
+
+      <p class="mini-title">сначала маленькая пауза</p>
+      <h1>Как прошёл твой день?</h1>
+      <p class="subtitle">
+        Перед маленьким вопросом давай на секунду остановимся.  
+        Сделай вдох, выдох и выбери, какое у тебя сейчас настроение 🌙
+      </p>
+
+      <div class="breathing-circle" aria-hidden="true">
+        <span>вдох</span>
+      </div>
+
+      <div class="mood-grid" role="radiogroup" aria-label="Настроение">
+        <button class="mood-card" type="button" data-mood="Очень хорошо 🌸">
+          <span>🌸</span>
+          <strong>Очень хорошо</strong>
+        </button>
+
+        <button class="mood-card" type="button" data-mood="Нормально ☁️">
+          <span>☁️</span>
+          <strong>Нормально</strong>
+        </button>
+
+        <button class="mood-card" type="button" data-mood="Немного устал/устала 🧸">
+          <span>🧸</span>
+          <strong>Немного устал/устала</strong>
+        </button>
+
+        <button class="mood-card" type="button" data-mood="Вообще без настроения 🌧️" data-stop="true">
+          <span>🌧️</span>
+          <strong>Вообще без настроения</strong>
+        </button>
+      </div>
+
+      <label class="field full calm-note">
+        <span>Можешь написать пару слов, если хочешь</span>
+        <textarea id="dayNote" rows="4" placeholder="Например: день был тяжёлый, но сейчас уже лучше..."></textarea>
+      </label>
+
+      <button class="btn yes" id="calmNextBtn" type="button">Я немного расслабился/расслабилась ✨</button>
+      <p class="hint">Выбери настроение, чтобы сайт понял, можно ли идти дальше.</p>
+      <p class="form-message" id="calmMessage"></p>
+    </section>
+
+    <section class="pause-page card hidden" id="pausePage">
+      <div class="calm-stars" aria-hidden="true">
+        <span>✦</span><span>♡</span><span>☁</span><span>✧</span>
+      </div>
+
+      <div class="pause-icon" aria-hidden="true">🌙</div>
+
+      <p class="mini-title">ничего страшного</p>
+      <h1>Тогда сегодня просто отдых</h1>
+
+      <div class="gentle-text">
+        <p>
+          Если сейчас совсем нет настроения, то не нужно себя заставлять.
+          Этот маленький сайт никуда не убежит, а важные вопросы лучше открывать тогда,
+          когда внутри есть хотя бы немного спокойствия.
+        </p>
+
+        <p>
+          Сделай себе чай, укройся чем-нибудь мягким, включи что-то приятное
+          и просто дай себе время выдохнуть. Сегодня можно ничего не решать.
+        </p>
+
+        <p>
+          Когда станет легче, можешь зайти сюда ещё раз.
+          Я буду ждать с таким же тёплым настроением 💗
+        </p>
+      </div>
+
+      <button class="btn soft" id="pauseBackBtn" type="button">Вернуться, если стало немного лучше</button>
+      <p class="hint">Дальше сайт не пойдёт, чтобы не портить настроение.</p>
+    </section>
+
+    <section class="hero card hidden" id="hero">
+      <div class="floating-hearts" aria-hidden="true">
+        <span>♡</span><span>💕</span><span>✨</span><span>🌸</span><span>♡</span>
+      </div>
+
+      <div class="sticker" aria-hidden="true">
+        <div class="bear">
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="face">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+            <span class="nose"></span>
+            <span class="mouth"></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="mini-title">а теперь маленькое важное приглашение</p>
+      <h1>Пойдёшь со мной на свидание?</h1>
+      <p class="subtitle">
+        Я подготовил маленькую анкету, чтобы выбрать самый уютный день,
+        вкусную еду и сделать всё максимально приятно 💗
+      </p>
+
+      <div class="choice-row">
+        <button class="btn yes" id="yesBtn">Да, конечно 💘</button>
+        <button class="btn no" id="noBtn" type="button">Нет</button>
+      </div>
+
+      <p class="hint">Подсказка: кнопка “Нет” не очень хочет нажиматься 😌</p>
+    </section>
+
+    <section class="date-form card hidden" id="dateForm">
+      <div class="section-head">
+        <p class="mini-title">ураааа</p>
+        <h2>Выбери детали нашего свидания</h2>
+        <p>Ответ сохранится в маленькую базу данных, а я потом увижу его в админке 💌</p>
+      </div>
+
+      <form id="inviteForm">
+        <div class="form-grid">
+          <label class="field">
+            <span>Дата</span>
+            <input type="date" id="date" name="date" required />
+          </label>
+
+          <label class="field">
+            <span>Время</span>
+            <select id="time" name="time" required>
+              <option value="">Выбери время</option>
+              <option>12:00</option>
+              <option>14:00</option>
+              <option>16:00</option>
+              <option>18:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>Сюрприз, договоримся потом</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="food-block">
+          <h3>Что хочется покушать?</h3>
+
+          <div class="food-grid">
+            <label class="food-card">
+              <input type="radio" name="food" value="Суши 🍣" required />
+              <span class="food-image">🍣</span>
+              <strong>Суши</strong>
+              <small>милый вечер и вкусные роллы</small>
+            </label>
+
+            <label class="food-card">
+              <input type="radio" name="food" value="Пицца 🍕" />
+              <span class="food-image">🍕</span>
+              <strong>Пицца</strong>
+              <small>уютно, просто и вкусно</small>
+            </label>
+
+            <label class="food-card">
+              <input type="radio" name="food" value="Паста 🍝" />
+              <span class="food-image">🍝</span>
+              <strong>Паста</strong>
+              <small>немного романтики по-итальянски</small>
+            </label>
+
+            <label class="food-card">
+              <input type="radio" name="food" value="Десерты 🧁" />
+              <span class="food-image">🧁</span>
+              <strong>Десерты</strong>
+              <small>кофе, сладкое и прогулка</small>
+            </label>
+
+            <label class="food-card">
+              <input type="radio" name="food" value="Что-то другое ✨" />
+              <span class="food-image">✨</span>
+              <strong>Сюрприз</strong>
+              <small>выберем что-то особенное</small>
+            </label>
+          </div>
+        </div>
+
+        <label class="field full">
+          <span>Пожелания</span>
+          <textarea id="wishes" name="wishes" rows="5" placeholder="Например: хочу в красивое место, без острого, после 18:00, хочу цветочки..."></textarea>
+        </label>
+
+        <button class="btn submit" type="submit" id="submitBtn">Отправить ответ 💌</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </section>
+
+    <section class="result card hidden" id="result">
+      <p class="mini-title">готово</p>
+      <h2>Ответ сохранён 💗</h2>
+      <p>
+        Всё получилось. Теперь мне осталось открыть админку и посмотреть выбранный день,
+        еду и пожелания.
+      </p>
+      <div class="celebration">💘 🌸 ✨ 🧁 💌</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
